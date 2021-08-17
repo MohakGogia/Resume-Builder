@@ -20,7 +20,6 @@ function LoggesOut(props) {
 }
 
 const Header = (props) => {
-  // const auth = props.auth;
   const handleLogOut=()=>{
    console.log('The user will sign out');
   }
@@ -69,16 +68,5 @@ const Header = (props) => {
 
   );
 };
-
-// const mapStateToProps=(state)=>{
-//   return{
-//      auth: state.firebase.auth
-//   }
-// }
-// const mapDispatchToProps= (dispatch)=>{
-//   return {
-//    signOut:()=>dispatch(authActions.signout())
-//   }
-// }
 
 export default Header;

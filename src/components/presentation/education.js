@@ -1,15 +1,10 @@
 import React,{useState} from "react";
-import { NavLink } from 'react-router-dom';
-import { withRouter } from "react-router-dom";
 import ResumePreview from './resumePreview'
 import {fieldCd} from './../../constants/typeCodes';
 import { connect } from 'react-redux'
-// import * as educationActions from '../../actions/educationActions';
-// import {bindActionCreators} from 'redux';
 import { useHistory } from "react-router-dom";
 
 function Education(props) {
-  // console.log('Education');
   let history = useHistory();
 
   const [education,setEducation]= useState(props.educationDetails);
@@ -37,18 +32,6 @@ function Education(props) {
     props.setEducationDetails(education)
     history.push('/contact')
   }
-
-  // const onSubmit = async(e) => {
-  //   props.setEducationDetails(education)
-  //   console.log(this.state.educationSection);
-  //   if(props.educationSection!=null){
-  //       props.updateEducation(props.document.id,education);
-  //   }else{
-  //       props.addEducation(props.document.id,education);
-  //   }
-  //    history.push('/finalize')
-  // }
-
     
     return (
       <div className="container med education" >
@@ -111,9 +94,6 @@ function Education(props) {
       </div>
     );
   }
-
-
-
   
 
 function mapStateToProps(store){

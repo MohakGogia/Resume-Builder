@@ -1,7 +1,4 @@
-import React,{useState,useEffect} from "react";
-// import { isLoaded } from 'react-redux-firebase'
-// import { connect } from "react-redux";
-// import * as authActions from '../../actions/authActions';
+import React,{useState} from "react";
 import { useHistory } from "react-router";
 
   function Register(props) {
@@ -17,9 +14,7 @@ import { useHistory } from "react-router";
       }
    
   const onSubmit=()=>{
-    
     //  props.register({email:email, password:password})
-    
   }
 
  

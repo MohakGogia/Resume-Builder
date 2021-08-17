@@ -1,9 +1,4 @@
-import React,{useEffect,useState} from "react";
-import update from 'immutability-helper';
-// import { connect } from "react-redux";
-// import {bindActionCreators} from 'redux';
-// import * as authActions from '../../actions/authActions';
-// import { isLoaded } from 'react-redux-firebase'
+import React,{useState} from "react";
 import { useHistory } from "react-router";
 
 function Login(props) {
@@ -11,11 +6,6 @@ function Login(props) {
     let history = useHistory();
     const [email,setEmail] = useState('');
     const [password,setPassword]= useState('');
-    // useEffect(() => {
-    //   if(props.auth?.uid){
-    //     history.push('/')
-    //   }
-    // }, [props])
 
   const handleEmail= (e)=>{
   setEmail(e.target.value);
@@ -25,10 +15,7 @@ function Login(props) {
     setPassword(e.target.value);
   }
     const onSubmit=()=>{
-    
-      // let obj = {email:email,password:password}
-      // console.log(obj)
-      // props.signIn(obj)
+
     }
 
     return (
@@ -63,7 +50,6 @@ function Login(props) {
         </div>
   }
   </>
-  
         </>
     );
   }

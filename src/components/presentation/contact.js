@@ -1,46 +1,22 @@
 import React,{useState} from "react";
-// import update from 'immutability-helper';
 import {fieldCd}  from '../../constants/typeCodes';
-// import * as contactActions from '../../actions/contactActions';
-// import { bindActionCreators } from 'redux';
-// import { withRouter } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import ResumePreview from './resumePreview'
 import { connect } from "react-redux";
-import education from "./education";
 
 function Contact(props) {
    let history = useHistory();
-   //sab input fields ko ek hi state m lekr chal rhe h
-   //aisa object hoga {"FNAM":"abc","LNAM":"abc",...}
-   // jo phle se padha h wo ajaega
+
    const [contact,setContact]= useState(props.contactDetails);
    const [education,setEducation]= useState(props.educationDetails);
-
-//    useEffect(() => {
-//        if(!props.document || !props.document.id || !props.document.skinCd)
-//        {
-//            history.push('/getting-started')
-//        }
-//    }, [])
   
- 
   const onchange=(event)=>{
         var key =event.target.name;
         var val =event.target.value;
-        // this.setState({contactSection:update(this.state.contactSection,{$merge: {[key]:val}})});
-        setContact({...contact,[key]:val}) // new key aur updation of key dono hoga isse
+        setContact({...contact,[key]:val})
     }
     const onSubmit= async()=>{
-        // contact k details save krde store m
         props.setContactDetails(contact);
-        // if(props.contactSection!=null){
-        //     props.updateContact(props.document.id,contact);
-        // }
-        // else{
-        //     props.addContact(props.document.id,contact);
-        // }
-
         history.push('/education');
     }
 
@@ -48,8 +24,7 @@ function Contact(props) {
         props.setContactDetails(contact);
         history.push('/getting-started');
     }
-
-    // if contact is not null and there is some value corresponding to that key then it will return that value
+    
     const getFieldData=(key)=>{
         if(contact && contact[key]){
           return contact[key]
